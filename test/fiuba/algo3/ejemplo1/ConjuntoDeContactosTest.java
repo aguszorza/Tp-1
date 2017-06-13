@@ -143,8 +143,14 @@ public class ConjuntoDeContactosTest {
 		Assert.assertEquals("La prueba NO pasó: No borro los mensajes de la conversacion", 0, contactos.obtenerConversacionCon("Agustin").cantidadDeMensajes());
 	}
 	
+	@Test (expected = ContactoInexistente.class)
+	public void testObtenerConversacionLevantaExcepcionSiNoExisteElContacto(){
+		contactos.obtenerConversacionCon("Agustin");
+		Assert.fail("La prueba NO pasó: no levanto una excepcion del tipo ContactoInexistente");
+	}
+	
 	@Test
-	public void testObtenerConversacionDevuelveLaConversacion(){
+	public void testObtenerConversacionDevuelveLaConversacionSiExisteElContacto(){
 		contactos.agregarContacto("Agustin");
 		contactos.enviarMensajeA("Agustin", "Hola");
 		contactos.recibirMensajeDe("Agustin", "Hola");
@@ -339,7 +345,7 @@ public class ConjuntoDeContactosTest {
 		try{
 			contactos.recibirMensajeDeGrupo("Tarde", "Agustin", "Hola");
 		}
-		catch (ContactoInexistente e){
+		catch (ContactoNoPertenecienteAlGrupo e){
 			Assert.fail("La prueba NO pasó: levanto una excepcion del tipo ContactoNoPertenecienteAlGrupo a pesar de que pertenece");
 		}
 	}

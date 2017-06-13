@@ -107,6 +107,7 @@ public class ConjuntoDeContactos {
 	}
 	
 	public ListadoDeMensajes obtenerConversacionCon(String unContacto){
+		comprobarContacto (unContacto);
 		return this.contactos.get(unContacto).obtenerConversacion();
 	}
 	

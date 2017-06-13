@@ -200,6 +200,12 @@ public class AlgoChatTest {
 		Assert.assertEquals("La prueba NO pasó: No aumento en uno la cantidad total de mensajes recibidos", 1, cantidad);
 	}
 
+	@Test (expected = ContactoInexistente.class)
+	public void testObtenerConversacionLevantaExcepcionSiNoExisteElContacto(){
+		algoChat.obtenerConversacionCon("Agustin");
+		Assert.fail("La prueba NO pasó: no levanto una excepcion del tipo ContactoInexistente");
+	}
+	
 	@Test
 	public void testObtenerConversacionEnPosicionUnoDevuelveElUltimoMensaje(){
 		algoChat.agregarContacto("Agustin");

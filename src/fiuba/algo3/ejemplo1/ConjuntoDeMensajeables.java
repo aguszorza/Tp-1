@@ -6,11 +6,11 @@ import java.util.function.Function;
 
 public class ConjuntoDeMensajeables {
 
-	private Hashtable <String, Mensajeable> mensajeables;
+	protected Hashtable mensajeables;
 	
-	public ConjuntoDeMensajeables(){
-		this.mensajeables = new Hashtable <String, Mensajeable>();
-	}
+	//public ConjuntoDeMensajeables(){
+		//this.mensajeables = new Hashtable ();
+	//}
 	
 	public int cantidadDeMensajeables(){
 		return this.mensajeables.size();
