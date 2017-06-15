@@ -43,23 +43,11 @@ public class ConjuntoDeGrupos {
 	}
 	
 	public int cantidadTotalMensajesEnviados(){
-		/*int cantidad = 0;
-		Iterator <Grupo> iter = this.grupos.values().iterator();
-		while (iter.hasNext()){
-			cantidad = cantidad + iter.next().cantidadTotalMensajesEnviados();
-		}
-		return cantidad;*/
 		Function<Grupo, Integer> cantidad = (Grupo grupo) -> {return grupo.cantidadTotalMensajesEnviados();}; 
 		return cantidadTotalMensajes(cantidad);
 	}
 	
 	public int cantidadTotalMensajesRecibidos(){
-		/*int cantidad = 0;
-		Iterator <Grupo> iter = this.grupos.values().iterator();
-		while (iter.hasNext()){
-			cantidad = cantidad + iter.next().cantidadTotalMensajesRecibidos();
-		}
-		return cantidad;*/
 		Function<Grupo, Integer> cantidad = (Grupo grupo) -> {return grupo.cantidadTotalMensajesRecibidos();}; 
 		return cantidadTotalMensajes(cantidad);
 	}

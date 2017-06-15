@@ -49,28 +49,14 @@ public class ConjuntoDeContactos {
 	}
 	
 	public int cantidadTotalMensajesEnviados(){
-		/*int cantidad = 0;
-		Iterator <Contacto> iter = this.contactos.values().iterator();
-		while (iter.hasNext()){
-			cantidad = cantidad + iter.next().cantidadTotalMensajesEnviados();
-		}
-		return cantidad;*/
 		Function<Contacto, Integer> cantidad = (Contacto contacto) -> {return contacto.cantidadTotalMensajesEnviados();}; 
 		return cantidadTotalMensajes(cantidad);
 	}
 	
 	public int cantidadTotalMensajesRecibidos(){
-		/*int cantidad = 0;
-		Iterator <Contacto> iter = this.contactos.values().iterator();
-		while (iter.hasNext()){
-			cantidad = cantidad + iter.next().cantidadTotalMensajesRecibidos();
-		}
-		return cantidad;*/
 		Function<Contacto, Integer> cantidad = (Contacto contacto) -> {return contacto.cantidadTotalMensajesRecibidos();}; 
 		return cantidadTotalMensajes(cantidad);
 	}
-	
-	//UNIR LAS DOS FUNCIONES
 	
 	public int cantidadMensajesDe(String unContacto){
 		comprobarContacto (unContacto);

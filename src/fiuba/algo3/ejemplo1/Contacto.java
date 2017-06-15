@@ -24,15 +24,6 @@ public class Contacto extends Mensajeable{
 		return this.grupos.size();
 	}
 	
-	/*public int cantidadTotalMensajesRecibidos(){
-		int cantidad = this.conversacion.cantidadTotalMensajesRecibidos();
-		Iterator <Grupo> iter = this.grupos.values().iterator();
-		while (iter.hasNext()){
-			cantidad = cantidad + iter.next().cantidadDeMensajesDe(this.nombre);
-		}
-		return cantidad;
-	}*/
-	
 	public Hashtable<String, Grupo> obtenerGrupos(){
 		return this.grupos;
 	}
